@@ -8,10 +8,12 @@
           <p>This blog explores my adventures into designing and making the wedding cake for two friends. Highlights and lowlights of the challenges, flavour explorations and reflections on each stage are included. Read on to join the journery.</p>
       </div>
 
-      <div>
-          <p>Post 1</p>
-          <h2><a href="/">It's all about the cake</a></h2>
-          <p>The initial challenge</p>
-      </div>
+      {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date}}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+      {% endfor %}
   </body>
 </html>
